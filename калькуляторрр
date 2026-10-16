@@ -1,0 +1,36 @@
+import math
+
+try:
+    acc = float(input())
+    while True:
+        command = input().strip().lower()
+        if command == 'exit':
+            break
+        elif command == 'с':
+            acc = float(input())
+        elif command == '=':
+            print(acc)
+        elif command == 'sin':
+            acc = math.sin(acc)
+        elif command == 'cos':
+            acc = math.cos(acc)
+        else:
+            try:
+                num = float(input())
+                if command == '+':
+                    acc += num
+                elif command == '-':
+                    acc -= num
+                elif command == '*':
+                    acc *= num
+                elif command == '/':
+                    if num == 0:
+                        print("Ошибка деления")
+                    else:
+                        acc /= num
+                elif command == '**':
+                    acc **= num
+            except:
+                print("Ошибка ввода")
+except:
+    print("Ошибка запуска")
